@@ -1,17 +1,16 @@
 package me.obelmokhtar.gestioncinemabackend.entities;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Film {
@@ -23,5 +22,6 @@ public class Film {
     private String realisateur;
     private String description;
     private String photo;
+    @Temporal(TemporalType.DATE)
     private Date dateSortie;
 }
